@@ -1,59 +1,24 @@
-import React, { useState, useContext } from "react"
-import { PokemonContext, PokemonProvider } from './PokemonContext.js'
-import '../styles/App.css';
-import PokeCard from './PokeCard.js'
+//simple app, initializes context, initializes data, initializes state
+import React, { useState, useEffect } from "react";
+import PokeInitFetch from "../utility/PokeInitFetch";
+import PokemonContext from "../utility/PokeContext.js";
+import Main from "./main/Main";
+import "../styles/App.css";
 
-const App = () => {
-const [pokemon, setPokemon] = useState('pikachu');
-const [pokemonData, setPokemonData] = useState([]);
+function App() {
+  const [pokeData, setPokeData] = useState([{}]);
 
+  useEffect(() => {
+    PokeInitFetch().then((data) => setPokeData(data));
+  }, []);
 
-const handleChange = (e) => {
-  setPokemon(e.target.value);
-}
-
-const handleSubmit = (e) => {
-  e.preventDefault();
-  getPokemon();
-}
-
-const getPokemon = async () => {
-  await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
-  .then(response => response.json())
-  .then(data => setPokemonData(data.abilities[1].ability.name))
-  .then(reformedData => console.log(reformedData));
-};
-
-
-return(
-
-  <div className='App'>
-    <div className='Navbar'>
-      <nav>
-      <ul>
-        <li><button>Home</button></li>
-        <li><button>About</button></li>
-      </ul>
-      </nav>
-    </div>
-    <form className="search-form" onSubmit={handleSubmit}>
-      <input
-      type='text'
-      onChange={handleChange}
-      placeholder='enterpokemon'
-      />
-    </form>
-    <h1>{pokemonData}</h1>
-    <div className='PokeCards'>
-    <PokemonProvider>
-    <PokeCard />
-    <PokeCard />
-    </PokemonProvider>
-    </div>
-   </div>
-
-)
+  return (
+    <PokemonContext.Provider value={{ pokeData, setPokeData }}>
+      <div className="app">
+        <Main />
+      </div>
+    </PokemonContext.Provider>
+  );
 }
 
 export default App;
-

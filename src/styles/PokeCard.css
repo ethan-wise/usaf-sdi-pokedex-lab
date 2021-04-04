@@ -1,4 +1,22 @@
-.PokeCard {
-    padding: 10px;
-    border: solid 5px black;
+.poke-card {
+  border: solid gray;
+  border-radius: 5%;
+  margin: 1%;
+  padding: 1%;
+}
+
+.poke-id {
+  display: flex;
+  align-self: flex-start;
+  color: red;
+}
+
+.poke-name {
+  display: flex;
+}
+
+.poke-sprite {
+  display: flex;
+  justify-content: center;
+  align-self: center;
 }
