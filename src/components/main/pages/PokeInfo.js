@@ -1,4 +1,5 @@
 //displays information about the individual pokemon when clicked
+import "../../../styles/PokeInfo.css";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import fetch from "../../../utility/AsyncFetch";

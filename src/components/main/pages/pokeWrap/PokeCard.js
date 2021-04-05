@@ -1,8 +1,8 @@
 //contains all displayed data of individual data, will contain poke data link
+import "../../../../styles/PokeCard.css";
 import { Link } from "react-router-dom";
 import getPokeUrlId from "../../../../utility/PokeUrlDeconstructor";
 import { getPokeImgUrl } from "../../../../utility/Links&Data";
-import "../../../../styles/PokeCard.css";
 
 const PokeCard = ({ pokemon }) => {
   var pokeId = getPokeUrlId(pokemon.url);

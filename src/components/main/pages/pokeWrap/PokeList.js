@@ -1,8 +1,8 @@
 //creates list of poke cards, interfaces with context
+import "../../../../styles/PokeList.css";
 import { useContext } from "react";
 import PokeContext from "../../../../utility/PokeContext";
 import PokeCard from "./PokeCard";
-import "../../../../styles/PokeList.css";
 
 function PokeList() {
   const { pokeData } = useContext(PokeContext);

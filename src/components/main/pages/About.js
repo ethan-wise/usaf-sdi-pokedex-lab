@@ -1,4 +1,6 @@
 //contains about the author information
+import "../../../styles/About.css";
+
 function About() {
   return (
     <div className="about">

@@ -1,10 +1,10 @@
 //simple app, initializes context, initializes data, initializes state
+import "../styles/App.css";
 import React, { useState, useEffect } from "react";
 import fetch from "../utility/AsyncFetch";
 import { getPokeListUrl } from "../utility/Links&Data";
 import PokemonContext from "../utility/PokeContext.js";
 import Main from "./main/Main";
-import "../styles/App.css";
 
 function App() {
   const [pokeData, setPokeData] = useState([{}]);

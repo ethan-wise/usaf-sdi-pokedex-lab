@@ -1,6 +1,6 @@
 //contains poke list and all poke cards
-import PokeList from "./pokeGrid/PokeList";
 import "../../../styles/Home.css";
+import PokeList from "./pokeWrap/PokeList";
 
 function Home() {
   return (

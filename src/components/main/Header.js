@@ -1,7 +1,7 @@
 //contains links to pages, contains header, will contain search
+import "../../styles/Header.css";
 import { Link } from "react-router-dom";
 import PokeDexLogo from "../../resources/Pokédex_logo.png";
-import "../../styles/Header.css";
 
 function Header() {
   return (
