@@ -1,22 +1,36 @@
+@font-face {
+  font-family: "pokemon";
+  src: url("../resources/Pokemon_GB.ttf") format("truetype");
+}
+
 .poke-card {
-  border: solid gray;
+  display: flex;
+  flex-direction: column;
+  border: ridge red;
   border-radius: 5%;
-  margin: 1%;
-  padding: 1%;
+  box-shadow: 0 0 5px 0 black;
+  background-color: lightgrey;
+  margin: 5px;
+  width: 125px;
+  height: 125px;
 }
 
 .poke-id {
-  display: flex;
   align-self: flex-start;
-  color: red;
+  color: black;
+  font-family: lucida console;
+  margin: 1px;
 }
 
 .poke-name {
-  display: flex;
+  align-self: center;
+  text-transform: capitalize;
+  font-family: pokemon;
+  font-size: x-small;
+  margin-top: 5px;
 }
 
 .poke-sprite {
-  display: flex;
-  justify-content: center;
   align-self: center;
+  margin-top: auto;
 }

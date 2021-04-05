@@ -1,5 +1,10 @@
 .header {
   display: flex;
   justify-content: center;
-  flex-direction: column;
+  border: ridge red;
+  border-radius: 5%;
+  background-color: rgb(202, 0, 0);
+}
+
+.pokedex-logo {
 }
