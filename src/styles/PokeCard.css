@@ -18,8 +18,10 @@
 .poke-id {
   align-self: flex-start;
   color: black;
-  font-family: lucida console;
+  font-family: pokemon;
+  font-size: small;
   margin: 1px;
+  font-style: italic;
 }
 
 .poke-name {
@@ -28,6 +30,7 @@
   font-family: pokemon;
   font-size: x-small;
   margin-top: 5px;
+  color: black;
 }
 
 .poke-sprite {

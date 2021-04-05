@@ -1,4 +1,4 @@
-//main page, global header, routes between pages
+//main page, global header, routes between pages, sends the name of the pokemon to the pokeinfo page
 import { Switch, Route, BrowserRouter } from "react-router-dom";
 import Header from "./Header";
 import Home from "./pages/Home";
@@ -10,13 +10,13 @@ function Main() {
     <BrowserRouter>
       <Header />
       <Switch>
+        <Route path="/pokemon/:name">
+          <PokeInfo />
+        </Route>
         <Route path="/about">
           <About />
         </Route>
-        <Route path="/pokeInfo">
-          <PokeInfo />
-        </Route>
-        <Route exact path="/">
+        <Route path="/">
           <Home />
         </Route>
       </Switch>

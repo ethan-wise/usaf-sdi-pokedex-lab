@@ -1,8 +1,14 @@
 //links and the amount of pokemon rendered
-const PokeAmt = 151;
+const pokeAmtDefault = 151;
 
-const PokeListUrl = `https://pokeapi.co/api/v2/pokemon/?limit=${PokeAmt}`;
-const PokeImgUrl =
-  "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/";
+function getPokeUrl(pokeNameorId) {
+  return `https://pokeapi.co/api/v2/pokemon/${pokeNameorId}/`;
+}
+function getPokeListUrl(pokeAmt = pokeAmtDefault) {
+  return `https://pokeapi.co/api/v2/pokemon/?limit=${pokeAmt}`;
+}
+function getPokeImgUrl(pokeId) {
+  return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${pokeId}.gif`;
+}
 
-export { PokeAmt, PokeListUrl, PokeImgUrl };
+export { getPokeUrl, getPokeListUrl, getPokeImgUrl };

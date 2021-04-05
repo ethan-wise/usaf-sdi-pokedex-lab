@@ -1,19 +1,22 @@
 //contains all displayed data of individual data, will contain poke data link
-import GetPokeUrlId from "../../../../utility/GetPokeUrlId";
-import { PokeImgUrl } from "../../../../utility/Links&Data";
+import { Link } from "react-router-dom";
+import getPokeUrlId from "../../../../utility/PokeUrlDeconstructor";
+import { getPokeImgUrl } from "../../../../utility/Links&Data";
 import "../../../../styles/PokeCard.css";
 
 const PokeCard = ({ pokemon }) => {
-  var pokeId = GetPokeUrlId(pokemon.url);
+  var pokeId = getPokeUrlId(pokemon.url);
   var pokeName = pokemon.name;
   return (
-    <div className="poke-card">
-      <span className="poke-id">{pokeId}</span>
-      <span className="poke-name">{pokeName}</span>
-      <div className="poke-sprite">
-        <img src={PokeImgUrl + pokeId + ".gif"} alt={pokeName} />
+    <Link to={`/pokemon/${pokeName}`}>
+      <div className="poke-card">
+        <span className="poke-id">{pokeId}</span>
+        <span className="poke-name">{pokeName}</span>
+        <div className="poke-sprite">
+          <img src={getPokeImgUrl(pokeId)} alt={pokeName} />
+        </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
